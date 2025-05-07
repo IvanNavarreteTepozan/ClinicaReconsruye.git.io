@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("loginForm").addEventListener("submit", function (event) {
+    document.getElementById("Form").addEventListener("submit", function (event) {
         event.preventDefault();
         
         let usuario = document.getElementById("usuario").value.trim();

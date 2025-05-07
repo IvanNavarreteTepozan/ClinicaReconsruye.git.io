@@ -53,19 +53,20 @@ header{
 
 .info{
     background-color: rgb(106, 199, 184);
-    padding:0;
+    padding:1px;
     margin: 0; 
     display: flex;
     justify-content: space-around;
     align-items:center;
-    height: 2.5vw;
+    height: 4.3vw;
     order: 1px solid #ccc;
     overflow: hidden;
-    font-size: 1.5vw;
-    color:rgb(16, 88, 76); ;
+    font-size: 2vw;
+    transform: scaleY(1.2);
+    color:rgb(6, 50, 43); ;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-    letter-spacing: 10px;
-    font-weight: 800;
+    letter-spacing: 8px;
+    font-weight: 1000;
 
 }
 

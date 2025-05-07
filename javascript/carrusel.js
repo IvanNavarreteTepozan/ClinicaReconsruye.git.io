@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     changeImage(); // Mostrar la primera imagen al inicio
-    setInterval(changeImage, 6000); // Cambiar cada 6 segundos
+    setInterval(changeImage, 2000); // Cambiar cada 6 segundos
 });
 

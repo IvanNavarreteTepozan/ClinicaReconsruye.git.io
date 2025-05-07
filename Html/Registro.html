@@ -5,6 +5,7 @@
     <title>Crear Cuenta</title>
     <link rel="stylesheet" href="../CSS/Forms.css">
     <script src="../javascript/validacion.js"></script>
+    <script src="../javascript/ventanas.js"></script>
 </head>
 <body>
     <div class="titulo" style="min-height: 40vw;">
@@ -12,22 +13,22 @@
         <h2>¡Regístrate!</h2>
     </div>
     <div class="Formulario">
-        <form id="registroForm" name="Registro" method="post" action="../PHP/conexionCrearUsuario.php">
+        <form id="Form" name="Registro" method="post" action="../PHP/conexionCrearUsuario.php">
             <div class="item">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Escriba su nombre" minlength="3" maxlength="50" >
+                <label for="nombre">Nombre(s):</label>
+                <input type="text" id="Nombre" name="Nombres" required placeholder="Escriba su nombre" minlength="3" maxlength="50" >
             </div>
             <div class="item">
                 <label for="apellidoP">Primer Apellido:</label>
-                <input type="text" id="apellidoP" name="apellidoP" required placeholder="Escriba su apellido paterno" minlength="3" maxlength="50">
+                <input type="text" id="Primer_Apellido" name="Primer_Apellido" required placeholder="Escriba su apellido paterno" minlength="3" maxlength="50">
             </div>
             <div class="item">
                 <label for="apellidoM">Segundo Apellido:</label>
-                <input type="text" id="apellidom" name="apellidoM" placeholder="Escriba su apellido materno" minlength="3" maxlength="50">
+                <input type="text" id="Segundo_Apellido" name="Segundo_Apellido" placeholder="Escriba su apellido materno" minlength="3" maxlength="50">
             </div>
             <div class="item">
                 <label for="Genero">Genero:</label>
-                <select id="genero" class="selector"  name="GeneroPersona" required>
+                <select id="genero"  name="genero" class="selector"  required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
@@ -64,6 +65,7 @@
                 <input type="reset" value="Restablecer" class="boton">
             </div>
         </form>
+        
     </div>
 </body>
 </html>
