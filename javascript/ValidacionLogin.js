@@ -1,16 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("Form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        
-        let usuario = document.getElementById("usuario").value.trim();
-        let contraseña = document.getElementById("contraseña").value.trim();
-        
-        if (usuario.length < 3 || contraseña.length < 10) {
-            alert("Por favor, complete correctamente todos los campos.");
-            return false;
-        }
+document.getElementById("Form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Previene el envío normal
 
-        alert("Inicio de sesión exitoso");
-        window.close();
+    let formData = new FormData(this);
+
+    fetch("CrearUsuario.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(resultado => {
+        if (resultado.trim() === "Éxito") {
+            alert("Inicio exitoso");
+            setTimeout(() => {
+                window.open("dashboard.html", "_blank"); // Abre nueva pestaña
+            }, 2000); // Espera 2 segundos
+        } else {
+            alert("Inicio erróneo");
+            setTimeout(() => {
+                window.open("error.html", "_blank"); // Abre otra pestaña
+            }, 2000); // Espera 2 segundos
+        }
     });
 });
+

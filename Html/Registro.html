@@ -23,13 +23,13 @@
     
 </head>
 <body>
-    <div class="titulo" style="height:20vw;">
+    <div class="titulo" style="height:30vw;">
         <img src="../img/newUser_Icon.png" height="35px" style="margin-right:20px;">
         <h2>¡Regístrate!</h2>
     </div>
     <div class="Formulario" style="min-height: 17vw;">
         
-        <form id="Form" name="Registro" method="post" action="../PHP/conexionCrearUsuario.php">
+        <form id="Form" name="Registro" method="post" action="../PHP/CrearUsuario.php">
             <div class="1raParte" id="1raParte">
             <div class="item">
                 <label for="nombre">Nombre(s):</label>
@@ -46,20 +46,16 @@
             <div class="item">
                 <label for="Genero">Genero:</label>
                 <select id="genero"  name="genero" class="selector"  required>
-                    <option value="Otro" disabled selected>Seleccione una opción</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
+                    <option value="N" disabled selected>Seleccione una opción</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
                     <option value="Otro">Otro</option>
                 </select>
             </div>
             <div class="item">
                 <label for="fecha">Fecha de nacimiento:</label>
                 <input type="date" id="fecha" name="fecha" required placeholder="Escriba su fecha de nacimiento" style="color: rgb(116, 116, 116);">
-            </div>
-            <div class="item">
-                <label for="curp">CURP:</label>
-                <input type="text" id="curp" name="curp" required placeholder="Escriba su CURP" minlength="18" maxlength="20">
-            </div>   
+            </div> 
             <div class="item">
                 <label for="correo">Correo:</label>
                 <input type="email" id="correo" name="correo" required placeholder="Escriba su correo">
@@ -87,7 +83,7 @@
                 <br>
                 <label for="pregunta">Seleccione una pregunta de seguridad:</label>
                 <select id="pregunta"  name="pregunta" class="selector"  required>
-                    <option value="1" disabled selected>Seleccione una opción</option>
+                    <option value="0" disabled selected>Seleccione una opción</option>
                     <option value="1">¿Cúal es el nombre de tu mascota favorita?</option>
                     <option value="2">¿Cuál es el nombre de tu mejor amigo?</option>
                     <option value="3">¿En que ciudad nacio tu madre?</option>

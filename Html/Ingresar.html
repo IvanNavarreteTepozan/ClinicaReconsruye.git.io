@@ -13,10 +13,10 @@
         <h2>Inicio de Sesión</h2>
     </div>
     <div class="Formulario">
-        <form id="Form" method="post" action="../PHP/conexionSesion.php">
+        <form id="Form" method="post" action="../PHP/InicioSesion.php">
             <div class="item">
-                <label for="usuario_Correo">CURP:</label>
-                <input type="text" id="usuario" name="usuario" required placeholder="Escriba su CURP" minlength="3" maxlength="50">
+                <label for="usuario_Correo">Nombre:</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Escriba su nombre" minlength="3" maxlength="50">
             </div>
             <div class="item">
                 <label for="contraseña">Contraseña:</label>
@@ -25,8 +25,8 @@
             <div class="item">
                 <label for="tipoUser">Ingresar como:</label>
                 <select id="tipo" name="tipo_usuario" class="selector" required>
-                    <option value="usuario">Usuario</option>
-                    <option value="psicologo">Psicólogo</option>
+                    <option value="0">Usuario</option>
+                    <option value="1">Psicólogo</option>
                 </select>
             </div>
             <div class="botones">

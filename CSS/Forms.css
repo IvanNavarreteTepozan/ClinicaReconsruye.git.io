@@ -5,8 +5,8 @@ body {
     background-size: cover;
     padding:3%;
     margin: 0;
-    align-self: center;
     display: flex;
+    align-self: center;
     justify-content: center;
     align-items: center;
     animation: moverFondo 10s ease-in-out infinite alternate;
@@ -23,28 +23,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
     padding-inline: 2%;
-    min-height: 15vw;
-    max-height: 25vw;
-    background: rgba(198, 224, 210, 0.5);
-    backdrop-filter: blur(15px);
+    background: rgba(152, 202, 177, 0.63);
+    backdrop-filter: blur(10px);
     border-top-left-radius: 20%;
     border-bottom-left-radius: 20px;
 
 }
 
 .titulo h2 {
-    font-size: 18px;
+    font-size: 28px;
     color: #2c3938;
     margin-inline: 5px;
+    text-align: center;
 }
 
 .Formulario {
-    background-color: rgb(201, 231, 223);
+    background-color: rgb(197, 233, 225);
     padding: 3%;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -56,7 +54,7 @@ body {
 }
 p {
     margin: 0 0 5px 0;
-    font-size: 1vw;
+    font-size: 16px;
     color:rgb(16, 88, 76); ;
 }
 
