@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar cita</title>
+    <link rel="stylesheet" href="../CSS/Forms.css">
+    <script src="../javascript/validacion.js"></script>
+    <script src="../javascript/ventanas.js"></script>
+</head>
+<body>
+    <div class="titulo" style="min-height: 40vw;">
+        <img src="../img/newUser_Icon.png" height="35px" style="margin-right:20px;">
+        <h2>Ingrese los datos de la cita</h2>
+    </div>
+    <div class="Formulario_cita" method="post" action="../PHP/conexionCrearCita.php"> <!-- Falta crear archivo conexionCrearCita.php -->
+        <form id="Form_Cita" name="agendar">
+            <label for="cita">Selecciona fecha y hora:</label><br>
+            <input type="datetime-local" id="cita" name="cita" min="<?= $ahora ?>" required>
+            <br><br>
+            <label for="id_psicologo">Escribe el nombre del psicólogo</label><br>
+            <input type="text" id="id_psicologo" name="cita_con" minlength="3" maxlength="50" >
+            <br><br>
+            <div class="botones">
+                <input type="submit" value="Enviar" class="boton">
+                <input type="reset" value="Restablecer" class="boton">
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>
