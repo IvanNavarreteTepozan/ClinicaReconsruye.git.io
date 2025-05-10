@@ -4,49 +4,59 @@ require_once("conexion.php");
 $mysql = new connection();
 $conexion = $mysql->get_connection();
 
-// Datos ficticios
-    $usuario= $_POST['usuario'];
-    $
-    $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-    $respuesta = $_POST['respuesta'];
+$correo = $_POST['correo'];
+$contraseña = md5($_POST['contraseña']); 
+//$contraseña =$_POST['contraseña'];
 
-echo "<h3>Datos Recibidos</h3>";
-echo "<p><strong>Usuario:</strong> $usuario</p>";
-echo "<p><strong>Contraseña (hash):</strong> $contraseña</p>";
-echo "<p><strong>Respuesta:</strong> $respuesta</p>";
+echo "<p><strong>Correo Electrónico:</strong> $correo</p>";
+echo "<p><strong>Contraseña:</strong> $contraseña</p>";
 
 try {
-    // Llamada al procedimiento con parámetro OUT
-    $sql = "CALL SPD_VALIDA_USUARIO( ?, ?, ?, @pcResultado)";
+    // Llamar al procedimiento almacenado con parámetros de entrada y salida
+    $sql = "CALL SPD_VALIDA_INICIAR_SESION(?, ?, @pnIdRol, @pcCadenaPermiso, @pcResultado)";
     $stmt = $conexion->prepare($sql);
-    if (!$stmt) {
-        throw new Exception("Error al preparar: " . $conexion->error);
-    }
-    else{
-        echo "Conexion Exitosa --->";
-    }
-    $stmt->bind_param(
-        "sss",
-        $usuario,
-        $contraseña,
-        $respuesta
-    );
 
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $conexion->error);
+    }
+
+    $stmt->bind_param("ss", $correo, $contraseña);
     $stmt->execute();
     $stmt->close();
 
-    // Obtener el valor del parámetro OUT
-    $resultado_query = $conexion->query("SELECT @pcResultado AS resultado");
+
+    $resultado_query = $conexion->query("SELECT @pnIdRol AS IdRol, @pcCadenaPermiso AS Permiso, @pcResultado AS Resultado");
+
     if ($resultado_query) {
         $row = $resultado_query->fetch_assoc();
-        echo "Resultado de INICIO SESIÓN: " . $row['resultado'];
+
+        $idRol = $row['IdRol'];
+        $permiso = $row['Permiso'];
+        $respuesta = trim($row['Resultado']);
+
+        // Mostrar las tres salidas
+        echo "<p><strong>IdRol:</strong> $idRol</p>";
+        echo "<p><strong>Permiso:</strong> $permiso</p>";
+        echo "<p><strong>Resultado:</strong> $respuesta</p>";
+
+        // Manejar la respuesta
+        if ($respuesta === "Inicio de sesión exitoso") {
+            echo "<script>
+            alert('" . htmlspecialchars($contraseña) . "');
+            </script>";
+        } else {
+            echo "<script>
+                    alert('Error en el inicio de sesión');
+                </script>";
+        }
+
     } else {
-        throw new Exception("Error al obtener resultado: " . $conexion->error);
+        throw new Exception("Error al obtener el resultado: " . $conexion->error);
     }
 
 } catch (Exception $e) {
     die("Error: " . $e->getMessage());
+} finally {
+    $conexion->close();
 }
-
-$conexion->close();
 ?>
