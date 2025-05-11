@@ -1,4 +1,6 @@
 
+
+
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../IMG/Fondo.png");
@@ -41,6 +43,7 @@ body {
 .Formulario {
     background-color: rgb(197, 233, 225);
     padding: 3%;
+    padding-top: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -125,4 +128,9 @@ input:focus, button:focus {
 
 .selector:hover {
     box-shadow: 0 0 5px rgba(22, 214, 128, 0.7);
+}
+
+a{
+    color:rgb(31, 182, 131);
+    text-align: center;
 }

@@ -1,3 +1,4 @@
+
 body{
     background-color:  rgb(255, 255, 255);
     margin: 0;
@@ -101,7 +102,7 @@ header{
 .Menu{
     padding:0;
     margin: 0; 
-    background-color: rgb(28, 123, 107);
+    background-color: rgb(42, 152, 108);
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -203,7 +204,7 @@ main p{
 }
 
 .ficha{
-    background: rgba(198, 224, 210, 0.1);
+    background: rgba(198, 224, 210, 0.3);
     backdrop-filter: blur(15px);
     border-radius: 5vw;
     padding: 1%;
