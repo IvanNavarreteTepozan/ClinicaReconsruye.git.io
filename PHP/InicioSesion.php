@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("conexion.php");
 
 $mysql = new connection();
@@ -7,9 +8,6 @@ $conexion = $mysql->get_connection();
 $correo = $_POST['correo'];
 $contraseña = md5($_POST['contraseña']); 
 //$contraseña =$_POST['contraseña'];
-
-echo "<p><strong>Correo Electrónico:</strong> $correo</p>";
-echo "<p><strong>Contraseña:</strong> $contraseña</p>";
 
 try {
     // Llamar al procedimiento almacenado con parámetros de entrada y salida
@@ -34,20 +32,25 @@ try {
         $permiso = $row['Permiso'];
         $respuesta = trim($row['Resultado']);
 
-        // Mostrar las tres salidas
-        echo "<p><strong>IdRol:</strong> $idRol</p>";
-        echo "<p><strong>Permiso:</strong> $permiso</p>";
-        echo "<p><strong>Resultado:</strong> $respuesta</p>";
-
         // Manejar la respuesta
         if ($respuesta === "Inicio de sesión exitoso") {
+
+            $_SESSION['correo']=$correo;
+            $_SESSION['IdRol']=$idRol;
+            $_SESSION['cadenaPermisos']=$_permiso;
+
             echo "<script>
-            alert('" . htmlspecialchars($contraseña) . "');
+            alert('" . htmlspecialchars($respuesta) . "');
+            window.close();
             </script>";
         } else {
+                session_unset();
+                session_destroy();
             echo "<script>
                     alert('Error en el inicio de sesión');
+                    window.close();
                 </script>";
+
         }
 
     } else {

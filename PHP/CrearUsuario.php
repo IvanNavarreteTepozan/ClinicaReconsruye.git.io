@@ -64,9 +64,6 @@ if ($validar==true){
             $row = $resultado_query->fetch_assoc();
             $_SESSION['Registro_Respuesta']= trim($row['resultado']);
             $_SESSION['EstadoRegistro']=1;
-            echo "<script>
-                    alert('Inicio de sesión exitoso');
-                </script>";
             header('Location: ../Html/Registro.php');
         }
         else {
