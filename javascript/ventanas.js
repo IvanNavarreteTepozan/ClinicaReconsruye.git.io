@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("Form").addEventListener("submit", function(event) {
         // Opcional: Agregar una confirmación antes de cerrar la ventana.
         alert("Formulario enviado. Cerrando ventana...");
-
         // Espera un momento antes de cerrarla, en caso de redirección.
         setTimeout(function() {
             window.close();
