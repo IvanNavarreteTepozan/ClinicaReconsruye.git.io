@@ -10,7 +10,7 @@ $conexion = $mysql->get_connection();
 $id_usuario =$_SESSION['correo'];
 $id_psicologo = $_POST['psicologo_id'];
 $motivo = $_POST['motivo'];
-$fecha = $_POST['fecha_consulta'];
+$fecha = $_POST['cita'];
 
 echo $id_usuario;
 echo $id_psicologo;
