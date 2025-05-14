@@ -64,11 +64,11 @@ if ($validar==true){
             $row = $resultado_query->fetch_assoc();
             $_SESSION['Registro_Respuesta']= trim($row['resultado']);
             $_SESSION['EstadoRegistro']=1;
-            header('Location: ../Html/Registro.php');
+            header('Location: ../PHP/Registro.php');
         }
         else {
             throw new Exception("Error al obtener resultado: " . $conexion->error);
-            header('Location: ../Html/Registro.php');
+            header('Location: ../PHP/Registro.php');
             $_SESSION['EstadoRegistro']=1;
         }
     

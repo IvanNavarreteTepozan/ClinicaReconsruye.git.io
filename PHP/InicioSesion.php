@@ -37,12 +37,8 @@ try {
 
             $_SESSION['correo']=$correo;
             $_SESSION['IdRol']=$idRol;
-            $_SESSION['cadenaPermisos']=$_permiso;
-
-            echo "<script>
-            alert('" . htmlspecialchars($respuesta) . "');
-            window.close();
-            </script>";
+            $_SESSION['cadenaPermisos']=$permiso;
+            header('Location: ../Html/Interfaz.html');
         } else {
                 session_unset();
                 session_destroy();

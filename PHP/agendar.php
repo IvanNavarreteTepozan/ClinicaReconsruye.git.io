@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Agendar cita</title>
-    <link rel="stylesheet" href="../CSS/Forms.css">
+    <link rel="stylesheet" href="../CSS/Menu.css">
     <script src="../javascript/validacion.js"></script>
     <script src="../javascript/ventanas.js"></script>
 </head>
 <body>
-    <div class="titulo" style="min-height: 40vw;">
-        <img src="../img/newUser_Icon.png" height="35px" style="margin-right:20px;">
+    <?php
+    SESSION_START();
+    ?>
+    <div class="titulo">
+        <img src="../img/Calendar_Icon.png" height="35px" style="margin-right:20px;">
         <h2>Ingrese los datos de la cita</h2>
     </div>
     <div class="Formulario_cita">
         <form id="Form_Cita" name="agendar" method="post" action="conexionPaciente.php"> 
-            <label for="id_usuario">Ingresa tu correo:</label><br>
-            <input type="text" id="usuario" name="usuario" minlength="3" maxlength="50" required>
-            <br><br>
-            <label for="motivo">¿Cuál es el motivo de la cita?</label><br>
-            <input type="text" id="motivo" name="motivo" minlength="4" maxlength="200">
-            <br><br>
-            <label for="cita">Selecciona fecha y hora:</label><br>
-            <input type="datetime-local" id="cita" name="fecha_consulta" min="<?= $ahora ?>" required>
-            <br><br>
-            <div id="psicologo">
+            <div class="item">
+                <label for="motivo">¿Cuál es el motivo de la cita?</label><br>
+                <input type="text" id="motivo" name="motivo" minlength="4" maxlength="200" placeholder="Escriba su motivo  de cita">
+            </div>
+            <div class="item">
+                <label for="cita">Selecciona fecha y hora:</label><br>
+                <input type="datetime-local" id="cita" name="fecha_consulta" min="<?= $ahora ?>" required>
+            </div>
+            <div id="psicologo" class="item">
                 <label>Selecciona al psicólogo:
-                    <select name="psicologo_id" required>
+                    <select  class="Selector" id="Selector" name="psicologo_id" required >
                         <option value="">-- Seleccione --</option>
                         <?php
                             $conn =new mysqli("reconstruye.ddns.net","IvanLoco","S0yBienL0c0","DB_RECONSTRUYE",3308);
