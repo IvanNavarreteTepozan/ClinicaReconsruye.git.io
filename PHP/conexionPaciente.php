@@ -21,10 +21,6 @@ $validar=true;
 if (!filter_var($id_usuario, FILTER_VALIDATE_EMAIL) || $id_usuario == NULL) {
     $validar = false;
 }
-if (!filter_var($id_psicologo, FILTER_VALIDATE_INT)) {
-    echo "No estás pasando el ID";
-    $validar = false;
-}
 
 if($validar==true){
     try {   
