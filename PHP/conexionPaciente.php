@@ -9,7 +9,7 @@ $conexion = $mysql->get_connection();
 $id_usuario = $_POST['usuario'];
 $id_psicologo = $_POST['psicologo_id'];
 $motivo = $_POST['motivo'];
-$fecha = $_POST['fecha_consulta'];
+$fecha = $_POST['cita'];
 
 $validar=true;
 if (!filter_var($id_usuario, FILTER_VALIDATE_EMAIL) || $id_usuario == NULL) {
@@ -32,7 +32,7 @@ if($validar==true){
             echo "Conexion Exitosa --->";
         }
         // Bind de parámetros (solo 3 parámetros según tu procedimiento)
-        $stmt->bind_param("siss", $id_usuario, $id_psicologo, $motivo, $fecha);
+        $stmt->bind_param("siss", $id_usuario, $id_psicologo, $motivo, $cita);
     
         $stmt->execute();
         $stmt->close();
