@@ -1,0 +1,214 @@
+
+body{
+    background-color:  rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(255, 255, 255, 1)),url('../img/Fondo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding-top: 10%;
+    margin-bottom: 2%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    animation: moverFondo 15s ease-in-out infinite alternate;
+}
+
+@keyframes moverFondo{
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.titulo{
+    background-color: #94d5b5;;
+    align-content: center;
+    box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+
+}
+.titulo .Enc{
+    padding-left: 5dvh;
+    height: 10vw;
+    display: flex;
+    align-content:center;
+    justify-content: center;
+}
+.titulo .Enc img{
+    border-radius: 100%;
+    height: 6vw;
+    align-self: center;
+}
+
+.titulo .Enc .Logo{
+    background: url('../img/LogoPag.png');
+    background-position:center;
+    background-size: cover;
+    height:100%;
+    width:30vw;
+}
+.info{
+    background-color: rgb(106, 199, 194);
+    padding:1px;
+    margin: 0; 
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    height: 4.3vw;
+    order: 1px solid #ffffff;
+    overflow: hidden;
+    font-size: 1.4vw;
+    color:rgb(6, 50, 43); ;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 8px;
+    font-weight: 1000;
+}
+.info .marquee{
+        position: absolute;
+        right: 0;
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        white-space: nowrap;
+        animation: desplazamiento 40s linear infinite;
+}
+@keyframes desplazamiento {
+    from { right: -100%; }
+    to { right: 100%; }
+}
+
+
+.carrusel {
+    display: flex;
+    overflow: hidden;
+    height: 30vw;
+    width: 100%;
+    position: relative;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imagebox {
+    background-position: center;
+    background-size: cover;
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.Menu{
+    padding:0;
+    margin: 0; 
+    background-color: rgb(42, 152, 108);
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    height: 6vw;
+}
+
+.Menu ul {
+    display: flex;
+    align-content: center;
+    justify-content: space-between; 
+    list-style: none;
+    width: 95%; 
+    padding:0;
+    margin: 0;
+    font-size: 2.4vw;
+}
+.Menu a{
+    color: black;
+    text-decoration: none;
+    margin-inline: 10px;
+}
+.Menu img{
+    height: 2vw;
+}
+
+
+.Menu li:hover{
+    filter: grayscale(100%);
+    filter: brightness(0) invert(1); 
+    font-size: 2.2vw;
+    transition-duration: .7s;
+}
+.Menu2{
+    padding:0;
+    margin: 0; 
+    background-color:rgb(28, 123, 107);
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    
+    height: 10vw;
+    box-shadow: 10px 5px 15px 10px rgb(1, 1, 1,0.3);
+}
+
+.Menu2 ul {
+    display: flex;
+    align-content: center;
+    justify-content:space-around;
+    list-style: none;
+    flex-wrap: nowrap;
+    width: 95%; 
+    padding:0;
+    margin: 0;
+    font-size: 1.3vw;
+}
+.Menu2 a{
+    
+    color: black;
+    text-decoration: none;
+    margin-inline: 5px;
+}
+.Menu2 img{
+    height: 1.5vw;
+    image-resolution: 420px;
+}
+
+
+.Menu2 li:hover{
+    filter: grayscale(100%);
+    filter: brightness(0) invert(1); 
+    transition-duration: 1s;
+}
+main h2{
+    text-align: left;
+    padding-left: 10%;
+    font-size: 4vw;
+    color: rgb(9, 76, 65);
+}
+main{
+    background-size: cover;
+    background-repeat:no-repeat;
+    background: url('../img/FondoB.png');
+    padding-bottom: 2vw;
+}
+main p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2vw;
+    text-align: justify;
+    padding-inline: 10%;
+    line-height: 2;
+    color: rgb(70, 89, 82);
+}
+
+.eslogan{
+        font-size: 2vw;
+        font-weight: bold;
+        color: rgb(28, 123, 107);
+        text-align: center;
+}
+
+.ficha{
+    background: rgba(198, 224, 210, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 5vw;
+    padding: 1%;
+    padding-top: 5px;
+    margin: 3%;
+    box-shadow: 10px 10px 15px rgba(0, 57, 33, 0.2);
+}
