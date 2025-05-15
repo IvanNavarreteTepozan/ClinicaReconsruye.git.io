@@ -5,7 +5,7 @@ require_once("conexion.php");
 $mysql = new connection();
 $conexion = $mysql->get_connection();
 
-$correo = $_POST['correo'];
+$usuario = $_POST['telefono'];
 $id = $_POST['pregunta'];
 $respuesta = $_POST['respuesta'];
 $contraseña = md5($_POST['contraseña']); // Se mantiene MD5 por fines didácticos
@@ -22,7 +22,7 @@ try {
         throw new Exception("Error al preparar la consulta: " . $conexion->error);
     }
 
-    $stmt->bind_param("sis", $correo, $id, $respuesta);
+    $stmt->bind_param("sis", $usuario, $id, $respuesta);
     $stmt->execute();
     $stmt->close();
 
@@ -44,7 +44,7 @@ try {
                 throw new Exception("Error al preparar la consulta de actualización: " . $conexion->error);
             }
 
-            $stmt2->bind_param("ss" , $correo, $contraseña);
+            $stmt2->bind_param("ss" , $usuario, $contraseña);
             $stmt2->execute();
             $stmt2->close();
 
@@ -60,7 +60,7 @@ try {
                     </script>";
                 } else {
                     echo "<script>
-                    alert('No se pudo cambiar la contraseña, intente de nuevo);
+                    alert('No se pudo cambiar la contraseña, intente de nuevo');
                     </script>";
                     header('Location: ../Html/OlvidoContrasena.html');
                 }

@@ -7,7 +7,7 @@ require_once("conexion.php");
 $mysql = new connection();
 $conexion = $mysql->get_connection();
 
-$id_usuario =$_SESSION['correo'];
+$id_usuario =$_SESSION['usuario'];
 $id_psicologo = $_POST['psicologo_id'];
 $motivo = $_POST['motivo'];
 $fecha = $_POST['fecha_consulta'];
@@ -19,6 +19,10 @@ echo $fecha;
 
 $validar=true;
 if (!filter_var($id_usuario, FILTER_VALIDATE_EMAIL) || $id_usuario == NULL) {
+    $validar = false;
+}
+if (!filter_var($id_psicologo, FILTER_VALIDATE_INT)) {
+    echo "No estás pasando el ID";
     $validar = false;
 }
 

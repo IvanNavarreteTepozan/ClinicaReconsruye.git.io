@@ -107,7 +107,7 @@ if (isset($_SESSION['Registro_Respuesta']) && $_SESSION['Registro_Respuesta'] !=
                     <option value="5">¿Cúal es el nombre de tu abuelo materno?</option>
                 </select>
                 <div class="item">
-                    <label for="telefono2">Escriba su respuesta:</label>
+                    <label for="respuesta">Escriba su respuesta:</label>
                     <input type="text" id="respuesta" name="respuesta"  required placeholder="respuesta" minlength="3" maxlength="50">
                 </div>
             </div>

@@ -5,7 +5,7 @@ require_once("conexion.php");
 $mysql = new connection();
 $conexion = $mysql->get_connection();
 
-$correo = $_POST['correo'];
+$usuario = $_POST['telefono'];
 $contraseña = md5($_POST['contraseña']); 
 //$contraseña =$_POST['contraseña'];
 
@@ -18,7 +18,7 @@ try {
         throw new Exception("Error al preparar la consulta: " . $conexion->error);
     }
 
-    $stmt->bind_param("ss", $correo, $contraseña);
+    $stmt->bind_param("ss", $usuario, $contraseña);
     $stmt->execute();
     $stmt->close();
 
@@ -35,10 +35,10 @@ try {
         // Manejar la respuesta
         if ($respuesta === "Inicio de sesión exitoso") {
 
-            $_SESSION['correo']=$correo;
+            $_SESSION['usuario']=$usuario;
             $_SESSION['IdRol']=$idRol;
-            $_SESSION['cadenaPermisos']=$permiso;
-            header('Location: ../Html/Interfaz.html');
+            $_SESSION['CadenaPermisos']=$permiso;
+            header('Location: ../PHP/Interfaz.php');
         } else {
                 session_unset();
                 session_destroy();
