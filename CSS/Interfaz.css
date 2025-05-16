@@ -39,7 +39,7 @@ header{
 }
 
 .titulo{
-    background-color: #aaebea;
+    background-color: #96d1ff;
     align-content: center;
     box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.2);
 
@@ -68,7 +68,7 @@ header{
 .Barra{
     padding:0;
     margin: 0; 
-    background-color: rgb(42, 152, 106);
+    background-color:  #E9DA7E;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -100,30 +100,33 @@ header{
     padding:1vw;
 }
 .Barra li:hover{
-    background-color:  rgb(38, 138, 101);
+    background-color: #ECC65E;
     transition-duration: 1.2s;
 }
+
 .Container{
-    width: 95%;
+    width: 97%;
     display: flex;
     align-content: center;
     align-self: center;
     justify-self: center;
-    height: 35vw;
-    
+    height: 40vw;
+    border-radius: 15px;    
 }
-
 .Menu{
     width: 30%;
     padding:0;
     margin: 0; 
-    background-color: rgb(83, 167, 150);
+    background-color:#3c52ace8;
     padding-top: 1vw;
     padding-bottom: 1svw;
+    border-top-left-radius: 16%;
+    border-bottom-left-radius: 20px;
+    padding-top: 3.5vw;
 }
 
 .VentanaPrincipal{
-    border-radius: 15px;
+    
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -145,6 +148,7 @@ header{
     height: 4vw;
     align-content: center;
     margin-left: 3%;
+    
 }
 
 
@@ -156,15 +160,16 @@ header{
     display: flex;
 }
 .Menu img{
-    height: 2vw;
+    height: 50%;
     margin-right: 10px;
 }
 
 
 .Menu li:hover{
     transition-duration: 1.2s;
-    background-color:  rgb(18, 111, 92);
+    background-color:   #3c52ac;
     font-size: 2.05vw;
+    color:#0b1928;
 }
 
 .Info {
@@ -182,7 +187,7 @@ header{
 .Pie{
     padding:0;
     margin: 0; 
-    background-color:rgb(28, 123, 107);
+    background-color:rgb(12, 45, 144);
     display: flex;
     justify-content: space-evenly;
     align-items:center;
@@ -204,7 +209,7 @@ header{
 }
 .Pie a{
     
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     margin-inline: 5px;
 }

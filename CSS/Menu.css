@@ -3,7 +3,6 @@
 
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-image: url("../IMG/Fondo.png");
     background-size: cover;
     margin: 0;
     animation: moverFondo 10s ease-in-out infinite alternate;

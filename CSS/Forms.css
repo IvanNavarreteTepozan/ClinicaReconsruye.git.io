@@ -26,22 +26,24 @@ body {
     align-items: center;
     justify-content: center;
     padding-inline: 2%;
-    background: rgba(152, 202, 177, 0.63);
+    background: rgba(0, 107, 94, 0.677);
     backdrop-filter: blur(10px);
     border-top-left-radius: 20%;
     border-bottom-left-radius: 20px;
+    max-height: 35%;
+    min-height: 30%;
 
 }
 
 .titulo h2 {
     font-size: 28px;
-    color: #2c3938;
+    color: #ececec;
     margin-inline: 5px;
     text-align: center;
 }
 
 .Formulario {
-    background-color: rgb(197, 233, 225);
+    background-color: rgb(202, 234, 231);
     padding: 3%;
     padding-top: 10px;
     border-radius: 8px;
@@ -58,7 +60,7 @@ body {
 p {
     margin: 0 0 5px 0;
     font-size: 16px;
-    color:rgb(16, 88, 76); ;
+    color:rgb(16, 34, 88); ;
 }
 
 .item input {
@@ -70,12 +72,12 @@ p {
     box-sizing: border-box;
 }
 .item input:focus {
-    border-color: rgb(16, 88, 76); ;
+    border-color: rgb(13, 126, 92);
     outline: none;
 }
 
 .item input:hover{
-    box-shadow:0 0 10px rgba(5, 91, 52, 0.3)
+    box-shadow:0 0 10px rgb(13, 126, 92);
 }
 .botones{
     display: flex;
@@ -84,7 +86,7 @@ p {
 .boton {
     width: 100%;
     padding: 10px;
-    background-color:rgb(16, 88, 76);
+    background-color:rgb(13, 126, 92);
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -95,9 +97,9 @@ p {
     margin: 5px;
 }
 .boton:hover{
-    color:rgb(16, 88, 76);
+    color:rgb(13, 126, 92);
     background-color: #ffffff;
-    box-shadow:0 0 5px rgba(22, 214, 128, 0.7)
+    box-shadow:0 0 5px rgb(13, 126, 92);
 }
 select{
     border: 1px solid #ccc;
@@ -127,10 +129,10 @@ input:focus, button:focus {
 }
 
 .selector:hover {
-    box-shadow: 0 0 5px rgba(22, 214, 128, 0.7);
+    box-shadow: 0 0 5px rgb(13, 126, 92);
 }
 
 a{
-    color:rgb(31, 182, 131);
+    color:rgb(0, 85, 255);
     text-align: center;
 }

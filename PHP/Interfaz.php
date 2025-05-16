@@ -3,32 +3,32 @@ session_start();
 
 // Suponiendo que $_SESSION['CadenaPermisos'] contenga "1010100011"
 $Cadena= $_SESSION['CadenaPermisos'];
-//$Cadena="1111111111";
 $permisos = str_split($Cadena); // Convierte la cadena en un array
 $opciones = [
-    "Mi Perfil",
-    "Consultas",
-    "Agendar",
-    "Reagendar",
-    "Ver citas",
-    "Psicólogos",
-    "Pacientes",
-    "Consultar Citas",
-    "Cancelar Citas",
-    "Administrador"
-    
+    "Mi Perfil",                                        //0
+    "Consultas",                                        //1
+    "Agendar",                                          //2
+    "Reagendar",                                        //3
+    "Ver citas",                                        //4
+    "Psicólogos",                                       //5
+    "Pacientes",                                        //6
+    "Consultar Citas",                                  //7
+    "Cancelar Citas",                                   //8
+    "Administrar",                                    //9
+        "Agregar Psicologo",                            //9.1 (10)
 ];
 $enlaces = [
-    "Mi Perfil.php",
-    "",
-    "agendar.php",
-    "Pruebas.php",
-    "Cancelar.php",
-    "../index.html",
-    "../index.html",
-    "../index.html",
-    "../index.html",
-    "../Html/Ingresar.html"
+    "Mi Perfil.php",                                     //0
+    "",//No lleva link pues solo es la opcion CONSULTAS  //1
+    "agendar.php",                                       //2
+    "Reagendar.php",                                     //3
+    "VerCitas.php",                                      //4
+    "", //No lleva link pues solo es la opcion Psicologos//5
+    "../index.html",                                     //6
+    "../index.html",                                     //7
+    "../index.html",                                     //8
+    "",//No lleva link pues solo es la opcion   Admin    //9
+        "Agregarpsicologo.php"//                         //9.1 (10)
 ];
 ?>
 
@@ -69,7 +69,7 @@ $enlaces = [
                     <li><img src='../img/Home_icon.png'><a href="../index.html" >Página Principal</a></li>
                     <?php
                         if ($permisos[0] == "1") {
-                                echo "<li onclick=\"abrirEnIframe('$enlaces[3]')\">
+                                echo "<li onclick=\"abrirEnIframe_Ocultar('$enlaces[0]')\">
                                 <img src='../img/Perfil_Icon.png'>$opciones[0]
                                 </li>";                               
                             }
@@ -84,12 +84,12 @@ $enlaces = [
                                 </li>";
                             }
                             if($permisos[6]=='1'){   
-                                echo "<li onclick=\"MenuUnico('Consultas','Psicologos','$enlaces[6]')\">
-                                <img src='../img/People_Icon.png'>$opciones[6]
-                                </li>";
+                                echo "<li onclick=\"abrirEnIframe_Ocultar('$enlaces[6]')\">
+                                <img src='../img/Perfil_Icon.png'>$opciones[6]
+                                </li>";  
                             }
                             if($permisos[9]=='1'){
-                                echo "<li onclick=\"MenuUnico('Consultas','Psicologos','$enlaces[9]')\">
+                                echo "<li onclick=\"MenuAdmin('Consultas','Psicologos','$enlaces[9]')\">
                                 <img src='../img/Admin_Icon.png'>$opciones[9]
                                 </li>";
                             }
@@ -133,6 +133,15 @@ $enlaces = [
                             if($permisos[8]=='1'){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[8]')\">
                                 <img src='../img/Cancel_Icon.png'>$opciones[8]
+                                </li>";
+                            }
+                        ?>
+                    </div>
+                    <div class="Admin" id="Admin">
+                        <?php
+                        if($permisos[9]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[10]')\">
+                                <img src='../img/add_Icon.png'>$opciones[10]
                                 </li>";
                             }
                         ?>

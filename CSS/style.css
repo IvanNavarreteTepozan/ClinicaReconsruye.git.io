@@ -28,7 +28,7 @@ header{
 }
 
 .titulo{
-    background-color: #aaebea;
+    background-color:  #96d1ff;
     align-content: center;
     box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
 
@@ -55,8 +55,7 @@ header{
     width:30vw;
 }
 .info{
-    background-color: rgb(106, 199, 194);
-    padding:1px;
+    background-color: #3c52ac;
     margin: 0; 
     display: flex;
     justify-content: space-around;
@@ -100,10 +99,19 @@ header{
     transition: opacity 1s ease-in-out;
 }
 
+.imagebox2 {
+    background: url("../img/CastoReconstruye.png");
+    background-size:contain;
+    height: 30vw;
+    width: 45vw;
+    justify-self: center;
+    margin: 0;
+    background-repeat: no-repeat;
+}
 .Menu{
     padding:0;
     margin: 0; 
-    background-color: rgb(42, 152, 108);
+    background-color: #E9DA7E;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -134,13 +142,13 @@ header{
     padding:1vw;
 }
 .Menu li:hover{
-    background-color:  rgb(38, 138, 101);
+    background-color:   #ECC65E;
     transition-duration: 1.2s;
 }
 .Menu2{
     padding:0;
     margin: 0; 
-    background-color:rgb(28, 123, 107);
+    background-color:rgb(26, 99, 167);
     display: flex;
     justify-content: space-evenly;
     align-items:center;
@@ -184,10 +192,11 @@ main h2{
     color: rgb(9, 76, 65);
 }
 main{
-    background-size: cover;
-    background-repeat:no-repeat;
-    background: url('../img/FondoB.png');
-    padding-bottom: 2vw;
+    background-image: url("../img/FondoB.png");
+    background-position:center;
+    background-size:contain;
+    background-repeat:repeat-y;
+    padding-bottom:2vw;
 }
 main p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -199,18 +208,18 @@ main p{
 }
 
 .eslogan{
-        font-size: 2vw;
+        font-size: 2.5vw;
         font-weight: bold;
-        color: rgb(28, 123, 107);
+        color: rgb(0, 153, 128);
         text-align: center;
 }
 
 .ficha{
-    background: rgba(198, 224, 210, 0.3);
-    backdrop-filter: blur(15px);
+    background: rgba(221, 229, 231, 0.428);
+    backdrop-filter: blur(45px);
     border-radius: 5vw;
-    padding: 1%;
     padding-top: 5px;
+    padding-bottom: 2vw;
     margin: 3%;
     box-shadow: 10px 10px 15px rgba(0, 57, 33, 0.2);
 }
