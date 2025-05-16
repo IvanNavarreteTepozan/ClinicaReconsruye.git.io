@@ -52,10 +52,10 @@
                             
                             if ($result && $result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    $id = $row['idPsicologo'];
+                                    $id = $row['IdPsicologo'];
                                     $nombre = $row['NombrePsicologo'];
                                     echo '<option value="' . htmlspecialchars($id) . '">' 
-                                        . htmlspecialchars($nombre) 
+                                        . htmlspecialchars($nombre)
                                         . '</option>';
                                 }
                             } else {

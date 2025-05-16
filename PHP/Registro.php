@@ -45,7 +45,7 @@ if (isset($_SESSION['Registro_Respuesta']) && $_SESSION['Registro_Respuesta'] !=
 ?>
 </div>
         
-        <form id="Form" name="Registro" method="post" action="../PHP/CrearUsuario.php">
+        <form id="Form" name="Registro" method="post" action="CrearUsuario.php">
             <div class="1raParte" id="1raParte">
             <div class="item">
                 <label for="nombre">Nombre(s):</label>

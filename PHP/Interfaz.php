@@ -3,32 +3,33 @@ session_start();
 
 // Suponiendo que $_SESSION['CadenaPermisos'] contenga "1010100011"
 $Cadena= $_SESSION['CadenaPermisos'];
+//$Cadena="1111111111";
 $permisos = str_split($Cadena); // Convierte la cadena en un array
 $opciones = [
-    "Agendar Cita",
-    "Revisar Cita",
-    "Opción 3",
-    "Opción 4",
-    "Opción 5",
-    "Opción 6",
-    "Opción 7",
-    "Opción 8",
-    "Opción 9",
-    "Opción 10"
+    "Mi Perfil",
+    "Consultas",
+    "Agendar",
+    "Reagendar",
+    "Ver citas",
+    "Psicólogos",
+    "Pacientes",
+    "Consultar Citas",
+    "Cancelar Citas",
+    "Administrador"
+    
 ];
 $enlaces = [
+    "Mi Perfil.php",
+    "",
     "agendar.php",
     "Pruebas.php",
-    "Pruebas.php",
+    "Cancelar.php",
     "../index.html",
     "../index.html",
     "../index.html",
     "../index.html",
-    "../index.html",
-    "../index.html",
-    "../index.html"
+    "../Html/Ingresar.html"
 ];
-echo "";
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +50,7 @@ echo "";
                 window.moveTo(0, 0);
                 window.resizeTo(screen.width, screen.height);
     </script>
+    <script src="../javascript/MenuDinamico.js"></script>
     <script src="../javascript/Frames.js"></script>
     <link rel="stylesheet" href="../CSS/Interfaz.css">
 </head>
@@ -64,36 +66,87 @@ echo "";
             </div>
             <div class="Barra">
                 <ul>
-                    <li><img src="../img/MiEspacio.png"><a href="Interfaz.html">Mis Citas</a></li>
-                    <li><img src="../img/User_Icon.png"><a href="../PHP/info.php">Mi información</a></li>
-                    <li><img src="../img/Home_icon.png" > <a href="../index.html">Página Principal</a></li>
-                    <li><img src="../img/Salir.png"><a href="CerrarSesion.php">Cerrar sesión</a></li>
+                    <li><img src='../img/Home_icon.png'><a href="../index.html" >Página Principal</a></li>
+                    <?php
+                        if ($permisos[0] == "1") {
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[3]')\">
+                                <img src='../img/Perfil_Icon.png'>$opciones[0]
+                                </li>";                               
+                            }
+                        if ($permisos[1] == "1") {
+                                echo "<li onclick=\"MenuConsultas('Consultas','Psicologos')\">
+                                <img src='../img/info_icon.png'>$opciones[1]
+                                </li>";
+                            }
+                            if($permisos[5]=='1'){   
+                                echo "<li onclick=\"MenuPsicologos('Consultas','Psicologos')\">
+                                <img src='../img/Lines_Icon.png'>$opciones[5]
+                                </li>";
+                            }
+                            if($permisos[6]=='1'){   
+                                echo "<li onclick=\"MenuUnico('Consultas','Psicologos','$enlaces[6]')\">
+                                <img src='../img/People_Icon.png'>$opciones[6]
+                                </li>";
+                            }
+                            if($permisos[9]=='1'){
+                                echo "<li onclick=\"MenuUnico('Consultas','Psicologos','$enlaces[9]')\">
+                                <img src='../img/Admin_Icon.png'>$opciones[9]
+                                </li>";
+                            }
+                    ?>
+                    <li><img src="../img/Salir.png"><a href="CerrarSesion.php">Salir</a></li>
                 </ul>
             </div>
         </header>
     <!--Aqui termina el encabezado de la página-->
-    <main>
-        <div class="VentanaPrincipal">
-            <div class="Container">
-            <div class="Menu">
-                <ul>
-                    <?php
-                        foreach ($permisos as $index => $permiso) {
-                            if ($permiso == "1") {
-                                echo "<li onclick=\"abrirEnIframe('$enlaces[$index]')\">
-                                <img src='../img/Agend_Icon.png'>$opciones[$index]
+        <main>
+            <div class="VentanaPrincipal" id="VentanaPrincipal">
+            <div class="Container" id="Container">
+            <div class="Menu" id="Menu">
+                <ul id="ListaMenu"style="display: none;">
+                    <div class="Consultas" id="Consultas">
+                        <?php
+                        if($permisos[2]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[2]')\">
+                                <img src='../img/Calendar2_icon.png'>$opciones[2]
                                 </li>";
                             }
-                        }
-                    ?>
+                            if($permisos[3]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[3]')\">
+                                <img src='../img/Calendar_Icon.png'>$opciones[3]
+                                </li>";
+                            }
+                            if($permisos[4]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[4]')\">
+                                <img src='../img/Ojos_Icon.png'>$opciones[4]
+                                </li>";
+                            }
+                            ?> 
+                    </div>
+                    <div class="Psicologos" id="Psicologos">
+                        <?php
+                            if($permisos[7]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[7]')\">
+                                <img src='../img/Datos_Icon.png'>$opciones[7]
+                                </li>";
+                            }
+                            if($permisos[8]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[8]')\">
+                                <img src='../img/Cancel_Icon.png'>$opciones[8]
+                                </li>";
+                            }
+                        ?>
+                    </div>
                 </ul>
             </div>
             <div class="Info">
-                <iframe src="../PHP/agendar.php"></iframe>
+                <iframe src="../Html/Principal.html" id="Frame"></iframe>
             </div>
         </div>
     </div>
-    </main>
+
+
+        </main>
     <footer>
         <div class="Pie" id="Contacto">
             <ul>
@@ -104,4 +157,5 @@ echo "";
             </ul>
         </div>
     </footer>
+    
 </body>

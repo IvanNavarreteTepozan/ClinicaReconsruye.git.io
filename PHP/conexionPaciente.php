@@ -7,26 +7,16 @@ require_once("conexion.php");
 $mysql = new connection();
 $conexion = $mysql->get_connection();
 
-$id_usuario =$_SESSION['usuario'];
+$nombre_usuario =$_SESSION['usuario'];
 $id_psicologo = $_POST['psicologo_id'];
 $motivo = $_POST['motivo'];
 $fecha = $_POST['fecha_consulta'];
 
-echo $id_usuario;
-echo $id_psicologo;
-echo $motivo;
-echo $fecha;
+echo $nombre_usuario."<hr>";
+echo $id_psicologo."<hr>";
+echo $motivo."<hr>";
+echo $fecha."<hr>";
 
-$validar=true;
-if (!filter_var($id_usuario, FILTER_VALIDATE_EMAIL) || $id_usuario == NULL) {
-    $validar = false;
-}
-if (!filter_var($id_psicologo, FILTER_VALIDATE_INT)) {
-    echo "No estás pasando el ID";
-    $validar = false;
-}
-
-if($validar==true){
     try {   
         // Llamamos al procedimiento para guardar los datos de cita del formulario en la tabla consulta
         $sql = "CALL SPD_SOLICITAR_CITA_PACIENTE(?, ?, ?, ?, @pcResultado)";
@@ -38,7 +28,7 @@ if($validar==true){
             echo "Conexion Exitosa --->";
         }
         // Bind de parámetros (solo 3 parámetros según tu procedimiento)
-        $stmt->bind_param("siss", $id_usuario, $id_psicologo, $motivo, $fecha);
+        $stmt->bind_param("siss", $nombre_usuario, $id_psicologo, $motivo, $fecha);
     
         $stmt->execute();
         $stmt->close();
@@ -54,9 +44,6 @@ if($validar==true){
 
     }catch (Exception $e) {
         die("Error: " . $e->getMessage());
-    }
-}else{
-    $conexion->close();
-}
+    };
 
 ?>
