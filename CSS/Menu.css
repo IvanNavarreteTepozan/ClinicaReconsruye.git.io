@@ -5,17 +5,14 @@ body {
     font-family: 'Times New Roman', Times, serif;
     background-size: cover;
     margin: 0;
+    margin-top: 20px;
     animation: moverFondo 10s ease-in-out infinite alternate;
-    display:grid;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
-@keyframes moverFondo{
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
+
 .titulo {
     background: rgba(152, 202, 177, 0.63);
     backdrop-filter: blur(10px);
@@ -74,7 +71,7 @@ p{
 }
 
 select{
-    border: 1px solid #ff0909;
+    border: 1px solid #ccc;
     display: flex;
     justify-self:center;
     border-color: transparent;
@@ -101,8 +98,9 @@ input:focus, button:focus {
 }
 
 .Selector:hover {
-    box-shadow: 0 0 5px rgba(22, 214, 128, 0.7);
+    box-shadow: 0 0 5px rgb(13, 126, 92);
 }
+
 .botones{
     display: flex;
     justify-content: center;

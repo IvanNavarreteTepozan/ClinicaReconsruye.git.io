@@ -148,12 +148,12 @@ header{
 .Menu2{
     padding:0;
     margin: 0; 
-    background-color:rgb(26, 99, 167);
+    background-color:rgb(16, 71, 160);
     display: flex;
     justify-content: space-evenly;
     align-items:center;
     
-    height: 10vw;
+    height: 12vw;
     box-shadow: 10px 5px 15px 10px rgb(1, 1, 1,0.3);
 }
 
@@ -166,7 +166,7 @@ header{
     width: 95%; 
     padding:0;
     margin: 0;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
 }
 .Menu2 a{
     
@@ -178,7 +178,6 @@ header{
     height: 1.5vw;
     image-resolution: 420px;
 }
-
 
 .Menu2 li:hover{
     filter: grayscale(100%);
@@ -221,5 +220,14 @@ main p{
     padding-top: 5px;
     padding-bottom: 2vw;
     margin: 3%;
-    box-shadow: 10px 10px 15px rgba(0, 57, 33, 0.2);
+    
+}
+.InfoExtra{
+    background-color: rgb(94, 141, 210); 
+    color: aliceblue;
+    align-items:center;
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 0;
+    padding: 0.5vw;
 }

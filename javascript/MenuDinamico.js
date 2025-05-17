@@ -6,6 +6,8 @@ function MenuConsultas() {
     document.getElementById('Psicologos').style.display = 'none';
     document.getElementById('ListaMenu').style.display = 'block';
     document.getElementById('Admin').style.display = 'none';
+    document.getElementById('Menu').style.width = '30%';
+    document.getElementById('Info').style.width = '70%';
 }
 
 function MenuPsicologos() {

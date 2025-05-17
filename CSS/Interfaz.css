@@ -110,33 +110,30 @@ header{
     align-content: center;
     align-self: center;
     justify-self: center;
-    height: 40vw;
+    height: 51vw;
     border-radius: 15px;    
+    align-items: center;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 .Menu{
     width: 30%;
+    height: 100%;
     padding:0;
     margin: 0; 
-    background-color:#3c52ace8;
-    padding-top: 1vw;
-    padding-bottom: 1svw;
+    background-color:#314e82e8;
     border-top-left-radius: 16%;
     border-bottom-left-radius: 20px;
-    padding-top: 3.5vw;
 }
 
-.VentanaPrincipal{
-    
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 
 .Menu ul {
     
     list-style: none;
     padding:0;
     margin: 0;
+    margin-top: 4.5vw;
     font-size: 2vw;
 
 }
@@ -167,14 +164,16 @@ header{
 
 .Menu li:hover{
     transition-duration: 1.2s;
-    background-color:   #3c52ac;
+    background-color:   #0505311f;
     font-size: 2.05vw;
     color:#0b1928;
+    transform: translateY(-5px);
 }
 
 .Info {
-    background-color: rgb(161, 225, 194);
-    width: 80%;
+    background-color:rgb(233, 233, 233);
+    width:80%;
+    height: 100%;
 }
 
     iframe {
@@ -184,15 +183,15 @@ header{
         left: 0;
     }
 
-.Pie{
+.Pie {
     padding:0;
     margin: 0; 
-    background-color:rgb(12, 45, 144);
+    background-color:rgb(14, 84, 146);
     display: flex;
     justify-content: space-evenly;
     align-items:center;
     
-    height: 10vw;
+    height: 12vw;
     box-shadow: 10px 5px 15px 10px rgb(1, 1, 1,0.3);
 }
 
@@ -223,4 +222,13 @@ header{
     filter: grayscale(100%);
     filter: brightness(0) invert(1); 
     transition-duration: 1s;
+}
+.InfoExtra{
+    background-color: rgb(94, 141, 210); 
+    color: aliceblue;
+    align-items:center;
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 0;
+    padding: 0.5vw;
 }

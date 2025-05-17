@@ -14,13 +14,14 @@ $opciones = [
     "Pacientes",                                        //6
     "Consultar Citas",                                  //7
     "Cancelar Citas",                                   //8
-    "Administrar",                                    //9
-        "Agregar Psicologo",                            //9.1 (10)
+    "Administrar",                                      //9
+        "Registrar Psicólogo",                          //9.1 (10)
+        "Eliminar Psicólogo"                            //9.2 (10)
 ];
 $enlaces = [
-    "Mi Perfil.php",                                     //0
+    "MiPerfil.php",                                     //0
     "",//No lleva link pues solo es la opcion CONSULTAS  //1
-    "agendar.php",                                       //2
+    "Agendar.php",                                       //2
     "Reagendar.php",                                     //3
     "VerCitas.php",                                      //4
     "", //No lleva link pues solo es la opcion Psicologos//5
@@ -28,7 +29,8 @@ $enlaces = [
     "../index.html",                                     //7
     "../index.html",                                     //8
     "",//No lleva link pues solo es la opcion   Admin    //9
-        "Agregarpsicologo.php"//                         //9.1 (10)
+        "RegistroPsicologo.php",                        //9.1 (10)
+        "Eliminar Psicólogo"                            //9.2 (10)
 ];
 ?>
 
@@ -100,7 +102,7 @@ $enlaces = [
         </header>
     <!--Aqui termina el encabezado de la página-->
         <main>
-            <div class="VentanaPrincipal" id="VentanaPrincipal">
+            
             <div class="Container" id="Container">
             <div class="Menu" id="Menu">
                 <ul id="ListaMenu"style="display: none;">
@@ -144,6 +146,11 @@ $enlaces = [
                                 <img src='../img/add_Icon.png'>$opciones[10]
                                 </li>";
                             }
+                            if($permisos[9]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[11]')\">
+                                <img src='../img/Cancel_Icon.png'>$opciones[11]
+                                </li>";
+                            }
                         ?>
                     </div>
                 </ul>
@@ -152,11 +159,17 @@ $enlaces = [
                 <iframe src="../Html/Principal.html" id="Frame"></iframe>
             </div>
         </div>
-    </div>
+    
 
 
         </main>
     <footer>
+        <div class="InfoExtra" >
+            <p>Horarios: 9:00 A.M - 11:00 A.M</p>
+            <hr>
+            <p style="text-justify:distribute-all-lines;">Recopilamos información como nombre, correo electrónico, teléfono y datos relacionados 
+                con su consulta psicológica, con el objetivo de brindarle un servicio adecuado.</p>
+        </div>
         <div class="Pie" id="Contacto">
             <ul>
                 <li><img src="../img/Phone_Icon.png" > Tel:+1 775 268 2367</li>
@@ -165,6 +178,7 @@ $enlaces = [
                 <li><img src="../img/Locate_Icon.png" ><a href="https://maps.app.goo.gl/PiQ1fWPPXtciJ6DE8">Pte., #409, Int.3, Tulancingo, Mexico</a> </li>
             </ul>
         </div>
+        
     </footer>
     
 </body>
