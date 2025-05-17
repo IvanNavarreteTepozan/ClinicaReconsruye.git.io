@@ -14,7 +14,7 @@ body {
 }
 
 .titulo {
-    background: rgba(152, 202, 177, 0.63);
+    background: rgba(0, 81, 168, 0.63);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 }
 
 .Formulario_cita {
-    background-color: rgb(197, 233, 225);
+    background-color: rgb(204, 228, 249);
     padding: 3%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     height: auto;
@@ -98,7 +98,7 @@ input:focus, button:focus {
 }
 
 .Selector:hover {
-    box-shadow: 0 0 5px rgb(13, 126, 92);
+    box-shadow: 0 0 5px rgba(0, 81, 168);
 }
 
 .botones{
@@ -108,7 +108,7 @@ input:focus, button:focus {
 .boton {
     width: 100%;
     padding: 10px;
-    background-color:rgb(16, 88, 76);
+    background-color:rgba(0, 81, 168);
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -121,5 +121,5 @@ input:focus, button:focus {
 .boton:hover{
     color:rgb(16, 88, 76);
     background-color: #ffffff;
-    box-shadow:0 0 5px rgba(22, 214, 128, 0.7)
+    box-shadow:0 0 5px rgba(0, 81, 168);
 }

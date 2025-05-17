@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-inline: 2%;
-    background: rgba(0, 107, 94, 0.677);
+    background:  rgb(94, 141, 210); 
     backdrop-filter: blur(10px);
     border-top-left-radius: 20%;
     border-bottom-left-radius: 20px;
@@ -43,7 +43,7 @@ body {
 }
 
 .Formulario {
-    background-color: rgb(202, 234, 231);
+    background-color:  #fffcec;
     padding: 3%;
     padding-top: 10px;
     border-radius: 8px;
@@ -72,12 +72,12 @@ p {
     box-sizing: border-box;
 }
 .item input:focus {
-    border-color: rgb(13, 126, 92);
+    border-color:  rgb(94, 141, 210); 
     outline: none;
 }
 
 .item input:hover{
-    box-shadow:0 0 10px rgb(13, 126, 92);
+    box-shadow:0 0 10px   #867d43;
 }
 .botones{
     display: flex;
@@ -86,7 +86,7 @@ p {
 .boton {
     width: 100%;
     padding: 10px;
-    background-color:rgb(13, 126, 92);
+    background-color: rgb(94, 141, 210); 
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -97,9 +97,9 @@ p {
     margin: 5px;
 }
 .boton:hover{
-    color:rgb(13, 126, 92);
+    color: rgb(94, 141, 210); 
     background-color: #ffffff;
-    box-shadow:0 0 5px rgb(13, 126, 92);
+    box-shadow:0 0 5px   #867d43;
 }
 select{
     border: 1px solid #ccc;
@@ -129,7 +129,7 @@ input:focus, button:focus {
 }
 
 .selector:hover {
-    box-shadow: 0 0 5px rgb(13, 126, 92);
+    box-shadow: 0 0 5px   #867d43;
 }
 
 a{

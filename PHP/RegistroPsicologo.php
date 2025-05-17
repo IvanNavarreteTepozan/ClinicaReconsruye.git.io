@@ -17,7 +17,7 @@
     <script src="../javascript/FormularioDinamico.js"></script>
 </head>
 
-<body style="background-image: none; background-color:honeydew;">
+<body style="background-image: none; background-color:rgb(178, 210, 255);">
     <div class="titulo" style="height:30vw;">
         <img src="../img/newUser_Icon.png" height="35px" style="margin-right:20px;">
         <h2>¡Agregar Psicólogo!</h2>

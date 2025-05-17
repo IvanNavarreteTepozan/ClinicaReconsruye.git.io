@@ -1,8 +1,8 @@
         :root {
-            --primary-color: #359180;
-            --secondary-color: #359180;
+            --primary-color: rgba(0, 81, 168);
+            --secondary-color: rgb(0, 38, 78);
             --text-color: #333;
-            --light-gray:   rgb(202, 234, 231);
+            --light-gray:   rgb(178, 210, 255);
             --medium-gray:  rgb(144, 167, 165);
             --dark-gray: #54645e;
             --null-color: #3a614ebe;

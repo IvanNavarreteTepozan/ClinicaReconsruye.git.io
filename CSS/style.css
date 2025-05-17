@@ -28,7 +28,7 @@ header{
 }
 
 .titulo{
-    background-color:  #96d1ff;
+    background-color:rgb(178, 210, 255);
     align-content: center;
     box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
 
@@ -110,7 +110,7 @@ header{
 }
 .Menu{
     padding:0;
-    margin: 0; 
+    margin: 0;
     background-color: #E9DA7E;
     display: flex;
     justify-content: space-around;
@@ -123,7 +123,7 @@ header{
     align-content: center;
     justify-content: space-between; 
     list-style: none;
-    width: 95%; 
+    width: 80%; 
     padding:0;
     margin: 0;
     font-size: 2.4vw;

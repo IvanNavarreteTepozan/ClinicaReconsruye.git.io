@@ -12,14 +12,10 @@
 <?php
 session_start();
 
-// Verificar sesión
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit();
 }
-// Fecha mínima para el datetime-local
-date_default_timezone_set('America/Mexico_City');
-$ahora = date('Y-m-d\TH:i');
 ?>
 
 <div class="titulo">
@@ -66,15 +62,37 @@ $ahora = date('Y-m-d\TH:i');
                 </select>
             </label>
         </div>
-
-        <!-- Inputs ocultos -->
         <input type="hidden" name="IdPsicologo" id="IdPsicologo">
         <input type="hidden" name="IdMotivo" id="IdMotivo">
         <input type="hidden" name="FechaConsulta" id="FechaConsultaReal">
 
         <div class="item">
-            <label for="CitaReagendada">Selecciona fecha y hora de la consulta:</label><br>
-            <input type="datetime-local" id="CitaReagendada" name="nueva_fecha_consulta" min="<?= $ahora ?>" required>
+            <label>Selecciona fecha y hora de la consulta:</label><br>
+            <div class="calendar-container">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button type="button" id="prev-month">←</button>
+                        <h2 id="month-year">Mayo 2025</h2>
+                        <button type="button" id="next-month">→</button>
+                    </div>
+                    <div class="calendar-grid" id="day-headers">
+                        <div class="day-header">Lun</div>
+                        <div class="day-header">Mar</div>
+                        <div class="day-header">Mié</div>
+                        <div class="day-header">Jue</div>
+                        <div class="day-header">Vie</div>
+                        <div class="day-header">Sáb</div>
+                        <div class="day-header">Dom</div>
+                    </div>
+                    <div class="calendar-grid" id="days"></div>
+                </div>
+                
+                <div class="time-selector">
+                    <h3>Selecciona Hora</h3>
+                    <div id="time-options"></div>
+                </div>
+            </div>
+            <input type="hidden" id="CitaReagendada" name="nueva_fecha_consulta" required>
         </div>
         
         <div class="botones">
@@ -84,14 +102,25 @@ $ahora = date('Y-m-d\TH:i');
     </form>
 </div>
 
+<script src="../javascript/calendario2.js"></script>
 <script>
-// Asignar valores a los inputs ocultos al seleccionar una opción
 document.getElementById("Selector").addEventListener("change", function () {
     const partes = this.value.split("|");
     if (partes.length === 3) {
         document.getElementById("IdPsicologo").value = partes[0];
         document.getElementById("IdMotivo").value = partes[1];
         document.getElementById("FechaConsultaReal").value = partes[2];
+    }
+});
+
+
+document.getElementById("Form_Cita").addEventListener("submit", function(e) {
+    const fechaSeleccionada = new Date(document.getElementById("CitaReagendada").value);
+    const ahora = new Date();
+    
+    if (fechaSeleccionada < ahora) {
+        e.preventDefault();
+        alert("No puedes seleccionar una fecha pasada.");
     }
 });
 </script>

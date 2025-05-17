@@ -3,6 +3,7 @@ session_start();
 
 // Suponiendo que $_SESSION['CadenaPermisos'] contenga "1010100011"
 $Cadena= $_SESSION['CadenaPermisos'];
+$Cadena="1111111111";
 $permisos = str_split($Cadena); // Convierte la cadena en un array
 $opciones = [
     "Mi Perfil",                                        //0
@@ -68,7 +69,7 @@ $enlaces = [
             </div>
             <div class="Barra">
                 <ul>
-                    <li><img src='../img/Home_icon.png'><a href="../index.html" >Página Principal</a></li>
+                    <li><img src='../img/Home_icon.png'><a href="../Html/index2.html" >Página Principal</a></li>
                     <?php
                         if ($permisos[0] == "1") {
                                 echo "<li onclick=\"abrirEnIframe_Ocultar('$enlaces[0]')\">
@@ -165,7 +166,7 @@ $enlaces = [
         </main>
     <footer>
         <div class="InfoExtra" >
-            <p>Horarios: 9:00 A.M - 11:00 A.M</p>
+            <p>Horarios: 9:00 A.M - 11:00 P.M</p>
             <hr>
             <p style="text-justify:distribute-all-lines;">Recopilamos información como nombre, correo electrónico, teléfono y datos relacionados 
                 con su consulta psicológica, con el objetivo de brindarle un servicio adecuado.</p>

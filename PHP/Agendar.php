@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="../CSS/calendario.css">
 </head>
 <body>
-    <?php
-    SESSION_START();
-
-    ?>
+    <body>
+    <?php SESSION_START(); ?>
     <div class="titulo">
         <img src="../img/Calendar2_Icon.png" height="35px" style="margin-right:20px;">
         <h2>Ingrese los datos de la cita</h2>
@@ -21,7 +19,7 @@
         <form id="Form_Cita" name="agendar" method="post" action="conexionPaciente.php"> 
             <div class="item">
                 <label for="motivo-cita">¿Cuál es el motivo por el que solicita la cita?</label>
-                <select  class="Selector" id="motivo"  name="motivo">
+                <select class="Selector" id="motivo" name="motivo">
                     <option value="0" disabled selected>Seleccione una opción</option>
                     <option value="1">Dificultades de aprendizaje</option>
                     <option value="2">Dificultades de aprendizaje</option>
@@ -41,7 +39,6 @@
             
             <div class="item">
                 <label>Selecciona fecha y hora:</label><br>
-                <!-- Reemplazamos el input datetime-local por nuestro calendario -->
                 <div class="calendar-container">
                     <div class="calendar">
                         <div class="calendar-header">
@@ -66,47 +63,27 @@
                         <div id="time-options"></div>
                     </div>
                 </div>
-                <!-- Input oculto que enviará el valor al formulario -->
                 <input type="hidden" id="fecha_consulta" name="fecha_consulta" required>
             </div>
             
             <div id="psicologo" class="item">
                 <label>Selecciona al psicólogo:
-                    <select  class="Selector" id="Selector" name="psicologo_id" required >
+                    <select class="Selector" id="Selector" name="psicologo_id" required>
                         <option value="">-- Seleccione --</option>
                         <?php
                             $conn = new mysqli("reconstruye.ddns.net","IvanLoco","S0yBienL0c0","DB_RECONSTRUYE",3308);
-
                             $sql = "CALL SPD_CONSULTA_NOMBRES_PSICOLOGOS()";
                             $result = $conn->query($sql); 
-                            
-                            // DIAGNÓSTICO: Mostrar estructura completa de los datos
-                            echo "<!-- DEBUG INFO:\n";
-                            if (!$result) {
-                                echo "Error en la consulta: " . $conn->error . "\n";
-                            } else {
-                                echo "Número de filas: " . $result->num_rows . "\n";
-                                if ($result->num_rows > 0) {
-                                    $first_row = $result->fetch_assoc();
-                                    print_r($first_row);
-                                    // Volver al inicio del resultset
-                                    $result->data_seek(0);
-                                }
-                            }
-                            echo "-->";
                             
                             if ($result && $result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     $id = $row['IdPsicologo'];
                                     $nombre = $row['NombrePsicologo'];
-                                    echo '<option value="' . htmlspecialchars($id) . '">' 
-                                        . htmlspecialchars($nombre)
-                                        . '</option>';
+                                    echo '<option value="' . htmlspecialchars($id) . '">' . htmlspecialchars($nombre) . '</option>';
                                 }
                             } else {
                                 echo '<option value="" disabled>No hay psicólogos disponibles</option>';
                             }
-                            
                             $conn->close();
                         ?> 
                     </select>
