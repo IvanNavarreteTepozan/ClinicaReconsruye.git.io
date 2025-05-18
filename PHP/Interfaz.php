@@ -27,7 +27,7 @@ $enlaces = [
     "VerCitas.php",                                      //4
     "", //No lleva link pues solo es la opcion Psicologos//5
     "../index.html",                                     //6
-    "../index.html",                                     //7
+    "CitasPsicologo.php",                                //7
     "../index.html",                                     //8
     "",//No lleva link pues solo es la opcion   Admin    //9
         "RegistroPsicologo.php",                        //9.1 (10)
