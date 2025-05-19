@@ -1,3 +1,16 @@
+<style>
+    p {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 2vw;
+    padding-bottom: 0;
+    background-color: rgba(71, 71, 71, 0.28);
+    border-radius: 5px;
+    margin: 0;
+    }
+</style>
+
 <?php
 session_start();
 
@@ -11,15 +24,13 @@ $id_psicologo = $_POST['id_psicologo'];
 $fecha_consulta = $_POST['fecha_consulta'];
 $accion = $_POST['accion'];
 //$accion = isset($_POST['accion']) ? (int)$_POST['accion'] : null;
-echo "opcion", $accion;
+//echo "opcion", $accion;
     
 $sql = "CALL SPD_AGENDAR_CITA_EN_ESPERA_DE_CONFIRMACION(?,?, ?, @pcResultado)";
 $stmt = $conexion->prepare($sql);
 
 if (!$stmt) {
     throw new Exception("Error al preparar: " . $conn->error);
-}else{
-    echo "Conexion Exitosa --->";
 }
 
 $stmt->bind_param("ssi", $id_psicologo, $fecha_consulta, $accion);
@@ -28,7 +39,7 @@ $resultado_query = $conexion->query("SELECT @pcResultado AS resultado");
         if ($resultado_query) {
             $row = $resultado_query->fetch_assoc();
             $resultado=trim($row['resultado']);
-            echo $resultado;
+            echo "<p>$resultado </p>";
             $row = $resultado_query->fetch_assoc();
         }
 

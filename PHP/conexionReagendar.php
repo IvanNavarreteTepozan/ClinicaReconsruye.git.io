@@ -73,7 +73,8 @@ try {
     if ($resultado_query) {
         $row = $resultado_query->fetch_assoc();
         $resultado = trim($row['resultado']);
-        echo htmlspecialchars($resultado);
+        $resultado2= htmlspecialchars($resultado);
+        echo "<p> $resultado2</p>";
     } else {
         echo "Error al obtener el resultado.";
     }

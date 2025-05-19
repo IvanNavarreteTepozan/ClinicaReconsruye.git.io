@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Agendar cita</title>
-    <link rel="stylesheet" href="../CSS/styleUsuario.css">
+    <link rel="stylesheet" href="../CSS/Menu.css">
     <link rel="stylesheet" href="../CSS/Tabla.css">
     <script src="../javascript/validacion.js"></script>
     <script src="../javascript/ventanas.js"></script>
 </head>
+
 <body>
 
 <?php
@@ -17,7 +18,7 @@ ini_set('display_errors', 1);
 
     <?php session_start() ?>
 
-    <div class="titulo">
+    <div class="titulo" style="margin:0%;">
         <img src="../img/Calendar_Icon.png" height="35px" style="margin-right:20px;">
         <h2>Mis Citas</h2>
     </div>
@@ -27,8 +28,8 @@ ini_set('display_errors', 1);
     require_once("conexion.php");
     $mysql = new connection();
     $conn = $mysql->get_connection();
-    //$id_psicologo =$_SESSION['usuario'];  //modificar si la sesión para psicólogo es diferente
-    $id_psicologo = 7757608099;
+    $id_psicologo =$_SESSION['usuario'];  //modificar si la sesión para psicólogo es diferente
+
 
     $sql = "CALL SPD_CONSULTA_PACIENTES(?)";
     $stmt = $conn->prepare($sql);
@@ -38,7 +39,7 @@ ini_set('display_errors', 1);
     }else{
       //echo "Conexion Exitosa --->";
     }
-    echo $id_psicologo;
+    //echo $id_psicologo;
     $stmt->bind_param("s", $id_psicologo);
     $stmt->execute();
     $result = $stmt->get_result();

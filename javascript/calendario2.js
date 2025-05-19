@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const fechaReagendadaInput = document.getElementById('CitaReagendada');
     const form = document.getElementById('Form_Cita');
     
-    // Generar horas en 3 columnas (9 AM - 11 PM)
+    // Generar horas en 2 columnas (8 AM - 8 PM)
     const generateTimeOptions = () => {
         timeOptionsElement.innerHTML = '';
-        const startHour = 9;  // 9 AM
-        const endHour = 23;   // 11 PM
-        const columns = 3;    // Número de columnas
+        const startHour = 8;   // 8 AM
+        const endHour = 20;    // 8 PM (20 en formato 24h)
+        const columns = 2;     // Número de columnas
         
         // Crear contenedor de columnas
         const columnsContainer = document.createElement('div');
@@ -39,10 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let minute = 0; minute < 60; minute += 30) {
                 if (hour === endHour && minute > 0) break;
                 
+                // Formatear hora en formato AM/PM
+                const ampm = hour >= 12 ? 'PM' : 'AM';
+                const displayHour = hour % 12 || 12;
                 const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                const displayTime = `${displayHour}:${minute.toString().padStart(2, '0')} ${ampm}`;
+                
                 const timeOption = document.createElement('div');
                 timeOption.className = 'time-option';
-                timeOption.textContent = timeString;
+                timeOption.textContent = displayTime;
                 timeOption.dataset.time = timeString;
                 
                 timeOption.addEventListener('click', function() {
@@ -65,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Renderizar calendario
     const renderCalendar = () => {
         const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
-                          "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
         monthYearElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
         
         daysElement.innerHTML = '';

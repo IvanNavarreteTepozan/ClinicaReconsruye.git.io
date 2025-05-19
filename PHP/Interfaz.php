@@ -3,7 +3,6 @@ session_start();
 
 // Suponiendo que $_SESSION['CadenaPermisos'] contenga "1010100011"
 $Cadena= $_SESSION['CadenaPermisos'];
-$Cadena="1111111111";
 $permisos = str_split($Cadena); // Convierte la cadena en un array
 $opciones = [
     "Mi Perfil",                                        //0
@@ -133,11 +132,6 @@ $enlaces = [
                                 <img src='../img/Datos_Icon.png'>$opciones[7]
                                 </li>";
                             }
-                            if($permisos[8]=='1'){
-                                echo "<li onclick=\"abrirEnIframe('$enlaces[8]')\">
-                                <img src='../img/Cancel_Icon.png'>$opciones[8]
-                                </li>";
-                            }
                         ?>
                     </div>
                     <div class="Admin" id="Admin">
@@ -145,11 +139,6 @@ $enlaces = [
                         if($permisos[9]=='1'){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[10]')\">
                                 <img src='../img/add_Icon.png'>$opciones[10]
-                                </li>";
-                            }
-                            if($permisos[9]=='1'){
-                                echo "<li onclick=\"abrirEnIframe('$enlaces[11]')\">
-                                <img src='../img/Cancel_Icon.png'>$opciones[11]
                                 </li>";
                             }
                         ?>
@@ -167,9 +156,6 @@ $enlaces = [
     <footer>
         <div class="InfoExtra" >
             <p>Horarios: 9:00 A.M - 11:00 P.M</p>
-            <hr>
-            <p style="text-justify:distribute-all-lines;">Recopilamos información como nombre, correo electrónico, teléfono y datos relacionados 
-                con su consulta psicológica, con el objetivo de brindarle un servicio adecuado.</p>
         </div>
         <div class="Pie" id="Contacto">
             <ul>

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../CSS/calendario.css">
 </head>
 <body>
-    <body>
     <?php SESSION_START(); ?>
     <div class="titulo">
         <img src="../img/Calendar2_Icon.png" height="35px" style="margin-right:20px;">
