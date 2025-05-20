@@ -8,7 +8,7 @@ $opciones = [
     "Mi Perfil",                                        //0
     "Agendar",                                        //1
     "Agendar",                                          //2
-    "Reagendar",                                        //3
+    "Reagendar citas",                                        //3
     "Ver citas",                                        //4
     "Citas",                                       //5
     "Pacientes",                                        //6
@@ -95,6 +95,7 @@ $enlaces = [
                                 <img src='../img/Admin_Icon.png'>$opciones[9]
                                 </li>";
                             }
+                            
                     ?>
                     <li><img src="../img/Salir.png"><a href="CerrarSesion.php">Salir</a></li>
                 </ul>
@@ -108,14 +109,19 @@ $enlaces = [
                 <ul id="ListaMenu"style="display: none;">
                     <div class="Consultas" id="Consultas">
                         <?php
-                        if($permisos[2]=='1'){
+                        if($permisos[2]=='1' && $permisos[8]!='1'){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[2]')\">
                                 <img src='../img/Calendar2_icon.png'>$opciones[2]
                                 </li>";
                             }
-                            if($permisos[3]=='1'){
+                            if($permisos[3]=='1' && $permisos[8]!='1'){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[3]')\">
                                 <img src='../img/Calendar_Icon.png'>$opciones[3]
+                                </li>";
+                            }
+                            if($permisos[4]=='1' &&  $permisos[8]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('AgendarPaciente.php')\">
+                                <img src='../img/Calendar_Icon.png'>Agendar Pacientes
                                 </li>";
                             }
                             if($permisos[4]=='1'  && $permisos[8]!='1' ){
@@ -126,6 +132,7 @@ $enlaces = [
                                 <img src='../img/Calendar_Icon.png'> Calendario de citas
                                 </li>";
                             }
+
                             ?> 
                     </div>
                     <div class="Psicologos" id="Psicologos">

@@ -21,7 +21,6 @@
                 <select class="Selector" id="motivo" name="motivo">
                     <option value="0" disabled selected>Seleccione una opción</option>
                     <option value="1">Dificultades de aprendizaje</option>
-                    <option value="2">Dificultades de aprendizaje</option>
                     <option value="3">Dificultades de adaptación</option>
                     <option value="4">Problemas de conducta infanto-juveniles</option>
                     <option value="5">Alteraciones en el estado de ánimo</option>
