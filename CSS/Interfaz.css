@@ -121,7 +121,7 @@ header{
     height: 100%;
     padding:0;
     margin: 0; 
-    background-color:#314e82e8;
+    background: linear-gradient(135deg, rgba(0, 81, 168), rgb(0, 38, 78));
     border-top-left-radius: 16%;
     border-bottom-left-radius: 20px;
 }
@@ -145,13 +145,14 @@ header{
     height: 4vw;
     align-content: center;
     margin-left: 3%;
+    color: rgb(255, 255, 255);
     
 }
 
 
 .Menu a{
     padding-left: 1%;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     margin-inline: 10px;
     display: flex;
@@ -159,14 +160,15 @@ header{
 .Menu img{
     height: 50%;
     margin-right: 10px;
+    filter: brightness(0) invert(1); /* Convierte negro a blanco */
 }
 
 
 .Menu li:hover{
     transition-duration: 1.2s;
-    background-color:   #0505311f;
+    background-color:   #08083044;
     font-size: 2.05vw;
-    color:#0b1928;
+    color:#eaeaea;
     transform: translateY(-5px);
 }
 
@@ -187,7 +189,7 @@ header{
 .Pie {
     padding:0;
     margin: 0; 
-    background-color:rgb(14, 84, 146);
+    background-color:rgb(107, 139, 204);
     display: flex;
     justify-content: space-evenly;
     align-items:center;

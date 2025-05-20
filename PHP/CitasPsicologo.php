@@ -20,7 +20,7 @@ ini_set('display_errors', 1);
 
     <div class="titulo" style="margin:0%;">
         <img src="../img/Calendar_Icon.png" height="35px" style="margin-right:20px;">
-        <h2>Mis Citas</h2>
+        <h2>Administrar citas</h2>
     </div>
 
     <?php 

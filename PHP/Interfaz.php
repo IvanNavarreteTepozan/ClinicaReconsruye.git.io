@@ -1,22 +1,22 @@
 <?php
 session_start();
 
-// Suponiendo que $_SESSION['CadenaPermisos'] contenga "1010100011"
 $Cadena= $_SESSION['CadenaPermisos'];
-$permisos = str_split($Cadena); // Convierte la cadena en un array
+
+$permisos = str_split($Cadena); 
 $opciones = [
     "Mi Perfil",                                        //0
-    "Consultas",                                        //1
+    "Agendar",                                        //1
     "Agendar",                                          //2
     "Reagendar",                                        //3
     "Ver citas",                                        //4
-    "Psicólogos",                                       //5
+    "Citas",                                       //5
     "Pacientes",                                        //6
-    "Consultar Citas",                                  //7
-    "Cancelar Citas",                                   //8
-    "Administrar",                                      //9
-        "Registrar Psicólogo",                          //9.1 (10)
-        "Eliminar Psicólogo"                            //9.2 (10)
+    "Aceptar o rechazar",                                  //7
+    "Ver citas",                                                 //8
+    "Administrar",                                       //9
+    "Registrar Psicólogo",                              //9.1 (10)
+    "Eliminar Psicólogo"                                 //9.2 (10)
 ];
 $enlaces = [
     "MiPerfil.php",                                     //0
@@ -25,9 +25,9 @@ $enlaces = [
     "Reagendar.php",                                     //3
     "VerCitas.php",                                      //4
     "", //No lleva link pues solo es la opcion Psicologos//5
-    "../index.html",                                     //6
+    "Pacientes.php",                                     //6
     "CitasPsicologo.php",                                //7
-    "../index.html",                                     //8
+    "VerCitas.php",                                     //8
     "",//No lleva link pues solo es la opcion   Admin    //9
         "RegistroPsicologo.php",                        //9.1 (10)
         "Eliminar Psicólogo"                            //9.2 (10)
@@ -118,9 +118,12 @@ $enlaces = [
                                 <img src='../img/Calendar_Icon.png'>$opciones[3]
                                 </li>";
                             }
-                            if($permisos[4]=='1'){
+                            if($permisos[4]=='1'  && $permisos[8]!='1' ){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[4]')\">
                                 <img src='../img/Ojos_Icon.png'>$opciones[4]
+                                </li>";
+                                echo "<li onclick=\"abrirEnIframe('VerCitasCalendario.php')\">
+                                <img src='../img/Calendar_Icon.png'> Calendario de citas
                                 </li>";
                             }
                             ?> 
@@ -130,6 +133,15 @@ $enlaces = [
                             if($permisos[7]=='1'){
                                 echo "<li onclick=\"abrirEnIframe('$enlaces[7]')\">
                                 <img src='../img/Datos_Icon.png'>$opciones[7]
+                                </li>";
+                            }
+                            if($permisos[8]=='1'){
+                                echo "<li onclick=\"abrirEnIframe('$enlaces[8]')\">
+                                <img src='../img/Ojos_Icon.png'>$opciones[8]
+                                </li>";
+
+                                echo "<li onclick=\"abrirEnIframe('VerCitasCalendario.php')\">
+                                <img src='../img/Calendar_Icon.png'> Calendario de citas
                                 </li>";
                             }
                         ?>

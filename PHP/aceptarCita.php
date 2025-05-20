@@ -11,6 +11,15 @@
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje</title>
+
+</head>
+<body>
 <?php
 session_start();
 
@@ -39,8 +48,9 @@ $resultado_query = $conexion->query("SELECT @pcResultado AS resultado");
         if ($resultado_query) {
             $row = $resultado_query->fetch_assoc();
             $resultado=trim($row['resultado']);
-            echo "<p>$resultado </p>";
-            $row = $resultado_query->fetch_assoc();
+            echo "<p> $resultado </p>";
+            
         }
-
 ?>
+</body>
+</html>
